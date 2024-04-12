@@ -1,0 +1,89 @@
+
+
+<body>
+
+    <div class="conteiner-fluid">
+        <div class="row">
+            <div class="barra-lateral col-12 col-sm-auto">
+              <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                <a  routerLink="/crear-rol"><i class="fas fa-home active"></i><span>Crear Rol</span></a>
+                <a  routerLink="/lista-roles"><i class="fas fa-home active"></i><span>Lista de roles</span></a>
+                <a  routerLink="/crear-usuario"><i class="fas fa-home active"></i><span>Crear usuario</span></a>
+                <a  routerLink="/lista-usuarios"><i class="fas fa-home active"></i><span>Lista de usuarios</span></a>
+                <a  routerLink="/iot"><i class="fas fa-home active"></i><span>IoT</span></a>
+            </nav>
+            </div>
+            <main class="main col">
+                <div class="row justify-content-center align-content-center text-center">
+                    <div class="column col-lg-6">
+                        <div class="card text-center">
+                          <div class="card-body">
+                            <h3>{{ titulo }}</h3>
+                            <form class="mt-4" [formGroup]="formRol" (ngSubmit)="agregarOEditar()">
+                                <div class="row">
+                                  <div class="col">
+                                    <input
+                                      type="number"
+                                      class="form-control form-control-lg"
+                                      placeholder="Nivel"
+                                      formControlName="idrol"
+                                    min="1" required
+        
+                                    />
+                                    <div
+                                      *ngIf="formRol.get('idRol')?.hasError('required') && formRol.get('idRol')?.touched"
+                                      class="text-danger"
+                                    >
+                                      El Nivel es requerido.
+                                    </div>
+                                    <div
+                                      *ngIf="formRol.get('idRol')?.hasError('min') && formRol.get('idRol')?.touched"
+                                      class="text-danger"
+                                    >
+                                      El Nivel debe ser mayor o igual a 1.
+                                    </div>
+                                  </div>
+                              
+                                  <div class="col">
+                                    <input
+                                      type="text"
+                                      class="form-control form-control-lg"
+                                      placeholder="Rol"
+                                      formControlName="nombreusuario"
+                                      maxlength="8" minlength="4" required
+                                    />
+                                    <div
+                                      *ngIf="formRol.get('rol')?.hasError('required') && formRol.get('rol')?.touched"
+                                      class="text-danger"
+                                    >
+                                      El rol es requerido.
+                                    </div>
+                                    <div
+                                      *ngIf="formRol.get('rol')?.hasError('maxlength') && formRol.get('rol')?.touched"
+                                      class="text-danger"
+                                    >
+                                      El Nombre de Usuario no debe exceder los 8 caracteres.
+                                    </div>
+                                    <div
+                                    *ngIf="formRol.get('rol')?.hasError('minlength') && formRol.get('rol')?.touched"
+                                    class="text-danger"
+                                  >
+                                    El Rol  debe tener al menos  4 caracteres.
+                                  </div>
+                                  </div>
+                                </div>
+                                <div class="mt-3">
+                                  <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-roles">Cancelar</button>
+                                  <button type="submit" class="btn btn-dark btn-lg" [disabled]="formRol.invalid">Guardar</button>
+                                </div>
+                              </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+  </body>
+  
+  

@@ -1,0 +1,113 @@
+
+
+
+
+
+<body>
+
+  <div class="conteiner-fluid">
+      <div class="row">
+          <div class="barra-lateral col-12 col-sm-auto">
+              <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                <a  routerLink="/crear-rol"><i class="fas fa-home active"></i><span>Crear Rol</span></a>
+                <a  routerLink="/lista-roles"><i class="fas fa-home active"></i><span>Lista de roles</span></a>
+                <a  routerLink="/crear-usuario"><i class="fas fa-home active"></i><span>Crear usuario</span></a>
+                <a  routerLink="/lista-usuarios"><i class="fas fa-home active"></i><span>Lista de usuarios</span></a>
+                <a  routerLink="/iot"><i class="fas fa-home active"></i><span>IoT</span></a>
+              </nav>
+          </div>
+          <main class="main col">
+              <div class="row justify-content-center align-content-center text-center">
+                  <div class="column col-lg-6">
+                      <div class="card text-center">
+                        <div class="card-body">
+                          <h3>{{ titulo }}</h3>
+                          <form class="mt-4" [formGroup]="formUsuario" (ngSubmit)="agregarOEditar()">
+                              <div class="row">
+                                <div class="col">
+                                  <input
+                                    type="number"
+                                    class="form-control form-control-lg"
+                                    placeholder="Nivel"
+                                    formControlName="idrol"
+                                  min="1" required
+      
+                                  />
+                                  <div
+                                    *ngIf="formUsuario.get('idrol')?.hasError('required') && formUsuario.get('idrol')?.touched"
+                                    class="text-danger"
+                                  >
+                                    El Nivel es requerido.
+                                  </div>
+                                  <div
+                                    *ngIf="formUsuario.get('idrol')?.hasError('min') && formUsuario.get('idrol')?.touched"
+                                    class="text-danger"
+                                  >
+                                    El Nivel debe ser mayor o igual a 1.
+                                  </div>
+                                </div>
+                            
+                                <div class="col">
+                                  <input
+                                    type="text"
+                                    class="form-control form-control-lg"
+                                    placeholder="Nombre usuario"
+                                    formControlName="nombreusuario"
+                                    maxlength="20" minlength="10" required
+                                  />
+                                  <div
+                                    *ngIf="formUsuario.get('nombreusuario')?.hasError('required') && formUsuario.get('nombreusuario')?.touched"
+                                    class="text-danger"
+                                  >
+                                    El Nombre de Usuario es requerido.
+                                  </div>
+                                  <div
+                                    *ngIf="formUsuario.get('nombreusuario')?.hasError('maxlength') && formUsuario.get('nombreusuario')?.touched"
+                                    class="text-danger"
+                                  >
+                                    El Nombre de Usuario no debe exceder los 20 caracteres.
+                                  </div>
+                                  <div
+                                  *ngIf="formUsuario.get('nombreusuario')?.hasError('minlength') && formUsuario.get('nombreusuario')?.touched"
+                                  class="text-danger"
+                                >
+                                  El Nombre de Usuario  debe tener al menos  10 caracteres.
+                                </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                              <input
+                                type="password"
+                                class="form-control form-control-lg mt-3"
+                                placeholder="Contraseña"
+                                formControlName="contrasena"
+                                maxlength="20" minlength="8" required
+                              />
+                            </div>
+                              <div
+                                *ngIf="formUsuario.get('contrasena')?.hasError('required') && formUsuario.get('contrasena')?.touched"
+                                class="text-danger"
+                              >
+                                La Contraseña es requerida.
+                              </div>
+                              <div
+                                *ngIf="formUsuario.get('contrasena')?.hasError('minlength') && formUsuario.get('contrasena')?.touched"
+                                class="text-danger"
+                              >
+                                La Contraseña debe tener al menos 8 caracteres.
+                              </div>
+                            
+                              <div class="mt-3">
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-usuarios">Cancelar</button>
+                                <button type="submit" class="btn btn-dark btn-lg" [disabled]="formUsuario.invalid">Guardar</button>
+                              </div>
+                            </form>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </main>
+      </div>
+  </div>
+</body>
+

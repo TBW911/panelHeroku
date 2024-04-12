@@ -1,0 +1,83 @@
+
+
+
+
+
+<body>
+
+    <div class="conteiner-fluid">
+        <div class="row">
+            <div class="barra-lateral col-12 col-sm-auto">
+                <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                    <a  routerLink="/crear-rol"><i class="fas fa-home active"></i><span>Crear Rol</span></a>
+                    <a  routerLink="/lista-roles"><i class="fas fa-home active"></i><span>Lista de roles</span></a>
+                    <a  routerLink="/crear-usuario"><i class="fas fa-home active"></i><span>Crear usuario</span></a>
+                    <a  routerLink="/lista-usuarios"><i class="fas fa-home active"></i><span>Lista de usuarios</span></a>
+                    <a  routerLink="/iot"><i class="fas fa-home active"></i><span>IoT</span></a>
+                </nav>
+            </div>
+            <main class="main col">
+                <div class="titulo3">
+                    PANEL DE CONTROL DE LUCES
+                </div>
+                <div class="main-container">
+                    <div class="container">
+                        <img src="assets\imagenes\oklans2.png" class="img-fluid" alt="Croquis">
+                    </div>
+                
+                    <div class="mini-panel">
+                        <ul class="humedad-lista">
+                            <li *ngIf="datosHumedad.length > 0" class="humedad-item">
+                                <span class="humedad-valor">{{ datosHumedad[datosHumedad.length - 1].valor }}</span>
+                                <span class="humedad-icono">💧</span>
+                            </li>
+                        </ul>
+                        <ul class="humedad-lista">
+                            <li *ngIf="datosHumedad.length > 0" class="humedad-item">
+                                <span class="humedad-valor">{{ datosTemperatura[datosTemperatura.length - 1].valor }}</span>
+                                <span class="humedad-icono">°C</span>
+                            </li>
+                        </ul>
+                        <div class="button-container">
+                            <button id="foco1-On"><img src="assets\imagenes\lamp1.png" alt="Imagen 1" (click)="toggleFoco1Apagar($event);" ></button>
+                        </div>
+                        <div class="button-container">
+                            <button id="foco2-On"><img src="assets\imagenes\lamp2.png" (click)="toggleFoco2Apagar($event);" alt="Imagen 2"></button>
+                        </div>
+                        <div class="button-container">
+                            <button id="foco3-On"><img src="assets\imagenes\lamp3.png" (click)="toggleFoco3Apagar($event);" alt="Imagen 3"></button>
+                        </div>
+                        <div class="button-container">
+                            <button id="foco4-On"><img src="assets\imagenes\lamp4.png" (click)="toggleFoco4Apagar($event);" alt="Imagen 4"></button>
+                        </div>
+
+                        <div class="button-container">
+                            <button id="foco1-Off"><img src="assets\imagenes\lapm_sin_luz1.png"   (click)="toggleFoco1($event);" alt="Imagen 1"></button>
+                        </div>
+                        <div class="button-container">
+                            <button id="foco2-Off"><img src="assets\imagenes\lapm_sin_luz2.png" (click)="toggleFoco2($event);"  alt="Imagen 2"></button>
+                        </div>
+                        <div class="button-container">
+                            <button id="foco3-Off"><img src="assets\imagenes\lapm_sin_luz3.png" (click)="toggleFoco3($event);"  alt="Imagen 3"></button>
+                        </div>
+                        <div class="button-container">
+                            <button id="foco4-Off"><img src="assets\imagenes\lapm_sin_luz4.png" (click)="toggleFoco4($event);"  alt="Imagen 4"></button>
+                        </div>
+                        
+                        
+                        
+            
+            
+            
+                        
+                       
+                        
+                    </div>
+            
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+

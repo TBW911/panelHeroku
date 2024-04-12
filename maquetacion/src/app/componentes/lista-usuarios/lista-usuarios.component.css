@@ -1,0 +1,99 @@
+body{
+  border-color: #fff;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  width: 1593px;
+  height: auto;
+}
+.barra{
+  background-color: #00adef;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.dropdown-menu{
+  margin: 17px;
+  background: #747474;
+  color: #fff;
+  box-shadow: 0 0 10PX rgba(0, 0, 0,0.568)
+}
+.menuperfil{
+  color: #fff;
+}
+.menuperfil:focus{
+  background: #23ae6b;
+  box-shadow: 0 0 10px rgba(0, 0, 0,0.568)
+}
+.cerrar:focus{
+  background-color: red;
+  box-shadow: 0 0 10px rgba(0, 0, 0,0.568);
+}
+
+/*   BARRA LATERAL */
+.barra-lateral{
+  background: #212121;
+  color: #fff;
+  min-width: 250px;
+  min-height: 100vh;
+}
+
+.barra-lateral a {
+  color: #fff;
+
+}
+
+/*  ESTILOS MENU*/
+.barra-lateral .menu a{
+  display: block;
+  padding: 20px;
+  font-family:fantasy ;
+  font-weight: 500;
+  border-bottom: 1px rgba(255, 255,255, .1);
+  list-style: none;
+  text-decoration: none;
+}
+
+.barra-lateral .menu a:hover{
+  background-color: darkgray;
+  text-decoration: none;
+}
+
+.barra-lateral .menu{
+  border-top: 5px #fff  solid;
+
+}
+
+.barra-lateral .menu a i {
+  margin-right: 20px;
+
+}
+
+/* MAIN */
+
+.main{
+  padding-top: 40px;
+  background-color: #ffffff8c;
+
+}
+.main columna{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media screen and ( max-width:1300px){
+  .barra-lateral{
+    min-width: auto;
+  }
+  .barra-lateral .menu a span{
+    display: none;
+  }
+  .barra-lateral .menu a i{
+    margin: 0;
+  }
+  .barra{
+    min-width: auto;
+  }
+  .dropdown-menu{
+    margin: 20px -79px 0px ;
+  }
+}
